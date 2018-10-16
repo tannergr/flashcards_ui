@@ -1,0 +1,71 @@
+.options{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.option{
+  text-align: center;
+  padding: 15px;
+  margin: 5px;
+  border-collapse:collapse;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+.avatarContainer{
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  align-items: center;
+}
+.game{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.avatar{
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 
+    0px 2px 4px -1px rgba(0, 0, 0, 0.2), 
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 
+    0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important;
+    color: rgb(125, 207, 2);
+}
+.selected{
+  border: 2px solid rgba(0,0,100,20%);
+}
+.actionBar{
+  display: flex;
+}
+.navButton{
+  text-align: center;
+  padding: 10px 20px;
+  border: 2px solid rgba(50,50,50,0.15);
+  margin: 10px;
+  background-color: white;
+  width: 30%;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.confirm{
+  border: 2px solid rgba(61, 197, 65, 0.4);
+  color: rgb(61, 197, 66);
+  float: right;
+}
+.done{
+  border: 2px solid rgba(239, 29, 29, 0.4);
+  color: rgba(239, 29, 29, 1)
+}
+.next{
+  border: 2px solid rgba(24, 217, 255, 0.555);
+  color: rgba(24, 217, 255, 0.555)
+}
+.separator{
+  flex: 1;
+}
+.correct{
+  border: 2px solid rgba(64, 255, 0, 0.555);
+}
+.incorrect{
+  border: 2px solid rgba(164, 0, 0, 0.555);
+}

@@ -1,0 +1,10 @@
+export default {
+  HOME: 1,
+  CHOOSE_EVENT: 2,
+  GROUP_CHOSEN: 3,
+  SELECT_PEOPLE: 4,
+  SELECT_DECK: 5,
+  PLAY_GAME: 6,
+  ALL_DONE: 7,
+  SAVE_DECK: 8,
+}

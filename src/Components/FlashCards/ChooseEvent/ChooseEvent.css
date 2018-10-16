@@ -1,0 +1,6 @@
+.eventList{
+  overflow-y: scroll;
+}
+.eventChoicePrompt{
+  text-align: center;
+}
