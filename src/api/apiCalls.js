@@ -29,7 +29,7 @@ export default {
       if(person.selected && person.member.photo){
         deck.cards.push({
           name: person.member.name,
-          iamgeurl: person.member.photo.highres_link
+          imageurl: person.member.photo.highres_link
         })
       }
     }
@@ -54,7 +54,7 @@ export default {
 
   // /api/deck/{deckID}/select Methods("Post")
   selectDeck(deckID){
-    return helper(`/api/deck/${deckID}`,"POST",{});
+    return helper(`/api/deck/${deckID}/select`,"POST",{});
   },
 
   // /api/member/deck Methods("GET")

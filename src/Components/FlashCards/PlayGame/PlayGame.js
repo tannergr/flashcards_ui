@@ -7,7 +7,6 @@ export default class PlayGame extends Component {
   constructor(){
     super();
     this.state = {
-      cards: testCards,
       index: 0,
       guess: -1,
       score: 0,
@@ -23,7 +22,7 @@ export default class PlayGame extends Component {
     this.setState({guess: guess});
   }
   confirm(){
-    let actual = this.state.cards[this.state.index].actual;
+    let actual = this.props.cards[this.state.index].actual;
     let incrementScore = 0;
     if(actual == this.state.guess) incrementScore = 1;
     this.setState((prev)=>{
@@ -39,7 +38,7 @@ export default class PlayGame extends Component {
     this.props.donePlaying({score, index});
   }
   next(){
-    if(this.state.index + 1 >= this.state.cards.length){
+    if(this.state.index + 1 >= this.props.cards.length){
       this.exit();
       return;
     }
@@ -53,13 +52,12 @@ export default class PlayGame extends Component {
   }
   render(){
     const index = this.state.index;
-    const cards = this.state.cards;
+    const cards = this.props.cards;
+    console.log(cards);
     return(
       <div className="game">
         <div className="avatarContainer" >
-          <div>
             <img className="avatar" src={cards[index].photo}/>
-          </div>
         </div>
         <div className="options">
           <Option 

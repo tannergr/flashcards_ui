@@ -14,7 +14,7 @@ export default class AllDone extends Component {
       <DeckPreview deck={this.props.currentDeck}/>
         <h1 className="header"> You Scored: </h1>
         <div className="score">
-          {this.props.score.score/(this.props.score.index+1)*100}%
+          {Math.round(this.props.score.score/(this.props.score.index+1)*100)}%
         </div>
         <div>
           <ActionButton 

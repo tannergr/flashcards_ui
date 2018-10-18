@@ -16,6 +16,8 @@
   justify-content: center;
   flex: 1;
   align-items: center;
+  align-content: center;
+  text-align: center;
 }
 .game{
   display: flex;
@@ -23,6 +25,7 @@
   height: 100%;
 }
 .avatar{
+  width: 75%;
   height: auto;
   border-radius: 5px;
   box-shadow: 

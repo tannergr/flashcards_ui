@@ -10,7 +10,7 @@ export default (props) => {
       </div>
       <div className="deckDetails">
         <p><b>{props.deck.name}</b></p>
-        <p> {props.deck.deck_id} Last Score: {props.deck.lastScore}</p>
+        <p>Last Score: {props.deck.lastScore}</p>
       </div>
     </div>
   )

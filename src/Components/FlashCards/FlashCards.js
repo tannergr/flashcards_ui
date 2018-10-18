@@ -56,24 +56,29 @@ export default class FlashCards extends Component {
 
   async selectDeck(){
     let decks = await api.getDecks();
-
+    decks.reverse();
     this.setState({
       screen: screens.SELECT_DECK,
       decks
     })
   }
   
-  changeDecks(deck){
+  async changeDecks(deck){
+    console.log(await api.selectDeck(deck.deck_id));
     this.setState({
       currentDeck: deck,
       screen: screens.HOME,
     })
   }
   
-  startGame(){
-    this.setState({screen: screens.PLAY_GAME})
+  async startGame(){
+    const cards = await api.getDeckCards(this.state.currentDeck.deck_id);
+    console.log(cards);
+    this.setState({screen: screens.PLAY_GAME, cards})
   }
   doneGame(score){
+    let scorePercent = Math.round(score.score/score.index*100);
+    api.addDeckScore(this.state.currentDeck.deck_id, scorePercent)
     this.setState({
       screen: screens.ALL_DONE,
       score
@@ -179,6 +184,7 @@ export default class FlashCards extends Component {
           }
           {screen == screens.PLAY_GAME      && 
             <PlayGame
+              cards={this.state.cards}
               donePlaying={this.doneGame}
             />
             
