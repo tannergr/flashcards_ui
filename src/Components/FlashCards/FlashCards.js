@@ -70,14 +70,29 @@ export default class FlashCards extends Component {
       screen: screens.HOME,
     })
   }
+
+  shuffle(arra1) {
+    var ctr = arra1.length, temp, index;
+
+        while (ctr > 0) {
+            index = Math.floor(Math.random() * ctr);
+            ctr--;
+            temp = arra1[ctr];
+            arra1[ctr] = arra1[index];
+            arra1[index] = temp;
+        }
+        return arra1;
+    }
   
   async startGame(){
-    const cards = await api.getDeckCards(this.state.currentDeck.deck_id);
+    let cards = await api.getDeckCards(this.state.currentDeck.deck_id);
     console.log(cards);
+    cards = this.shuffle(cards);
     this.setState({screen: screens.PLAY_GAME, cards})
   }
   doneGame(score){
     let scorePercent = Math.round(score.score/score.index*100);
+    if(!(scorePercent > 0 )) scorePercent = 0;
     api.addDeckScore(this.state.currentDeck.deck_id, scorePercent)
     this.setState({
       screen: screens.ALL_DONE,

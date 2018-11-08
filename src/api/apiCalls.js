@@ -22,14 +22,16 @@ export default {
     let deck = {
       name: deckName,
       event_id: event.id,
+      group_name: event.group.urlname,
       cards: []
     }
+    console.log(deck);
     for(let i = 0; i < people.length; i++){
       let person = people[i];
       if(person.selected && person.member.photo){
+        console.log(person.member)
         deck.cards.push({
-          name: person.member.name,
-          imageurl: person.member.photo.highres_link
+          meetup_id: person.member.id
         })
       }
     }
